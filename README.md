@@ -52,11 +52,36 @@ Instancia de la clase en `main`
 
 ![image](https://github.com/WhitneySt/gps-reader/assets/98284374/e6328df1-0341-4e1b-869e-bbaf357360c8)
 
+15. **Resultados de tramas formateado**
 
+**$GPGLL**
+```
+Coordenadas {
+    Latitud='5133.81 N', 
+    Longitud='00042.25 W'
+}
+```
 
+**$GPVTG**
+```
+Rumbo {
+    RumboVerdadero='054.7,T: Rumbo verdadero de 54.7 grados.', 
+    RumboMagnetico='034.4,M: Rumbo magnético de 34.4 grados.', 
+    VelocidadNudos='005.5,N: Velocidad sobre tierra en nudos (knots).', 
+    VelocidadKilometrosHora='010.2,K: Velocidad sobre tierra en kilómetros por hora.'
+}
+```
 
-
- 
-
-
+**$GPZDA**
+```
+FechaHora {
+    TiempoUniversal='160012.71: Hora UTC (Coordinated Universal Time) en formato HHMMSS.SS (horas, minutos, segundos y fracciones de segundo).', 
+    Dia='11: Día del mes.', 
+    Mes='03: Mes.', 
+    Anio='2004: Año.', 
+    DesplazamientoHoras='-1: Desplazamiento horario de la zona horaria en horas. En este caso, -1 hora.', 
+    DesplazamientoMinutos='00: Desplazamiento horario de la zona horaria en minutos. En este caso, 0 minutos.',
+    HoraLocal=15:00:12.710
+}
+```
 

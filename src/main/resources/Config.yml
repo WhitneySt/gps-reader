@@ -1,0 +1,5 @@
+portName: COM2
+baudRate: 57600
+codigoCoordenadas: $GPGLL
+codigoRumbo: $GPVTG
+codigoFechaHora: $GPZDA

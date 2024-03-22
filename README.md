@@ -44,6 +44,14 @@ jSerialComm, es una librería moderna que proporciona soporte para la comunicaci
          ![image](https://github.com/WhitneySt/gps-reader/assets/98284374/0dbf3cf3-2d16-49df-8b71-f19c35534c6a)
 Instancia de la clase en `main`
          ![image](https://github.com/WhitneySt/gps-reader/assets/98284374/9d459cdd-93c8-4bd3-8a10-6a082b27d502)
+   
+13. Se crea un nuevo hilo de ejecución para la conexión con el puerto serial virtual, siguiendo la recomendación de la libreria `jSerialComm`, hacemos un ciclo infinito para permanecer escuchando por las tramas que lleguen al puerto serial configurado, en dicho ciclo pregunto si hay bytes disponibles, en caso de que si, los extraigo usando la funcion bytesAvailable de la libreria y transformando dichos bytes en un string, primero usando la funcion readBytes de la libreria y luego pasando el buffer de bytes al constructor del objeto String, a este punto ya tengo la cadena de caracteres enviada desde el GPS a través del puerto, lo que sigue es trabajar el String.
+![image](https://github.com/WhitneySt/gps-reader/assets/98284374/ad1c7fed-a7f8-4416-b666-86aa5acbf2c0)
+
+14. Para tratar el String, lo que hago es hacer un split para obtener un array apartir del string separado por coma, asumiendo que el comando es correcto, procedo a extraer cada posicion del array como un dato especifico del comando, entonces, el codigo del comando seria la posicion 0, y asi sucesivamente con las otras posiciones y datos que llegan en la cadena de caracteres. Ya sabiendo el codigo del comando, con condicionales establezco una lógica de extracción especifica dependiendo del codigo de la trama y extrayendo asi los datos que luego paso a una clase especifica, para el codigo `$GPGLL` utilizo la clase Coordenadas para estructurar y mostrar los resultados, para el codigo `$GPVTG` utilizo la clase Rumbo, y para el codigo `$GPZDA` utilizo la clase FechaHora
+
+![image](https://github.com/WhitneySt/gps-reader/assets/98284374/e6328df1-0341-4e1b-869e-bbaf357360c8)
+
 
 
 
